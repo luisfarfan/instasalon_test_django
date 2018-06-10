@@ -11,3 +11,8 @@ class Bookings(models.Model):
     hora_fin = models.TimeField(null=False)
     room_profesional_service = models.ForeignKey(RoomProfessionalService, on_delete=models.CASCADE)
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    estado = models.ForeignKey('BookingState', on_delete=models.CASCADE, default=1)
+
+
+class BookingState(models.Model):
+    nombre = models.CharField(max_length=50)

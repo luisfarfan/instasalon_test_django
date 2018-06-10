@@ -11,7 +11,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
 
 class RoomProfessionalServiceSerializer(serializers.ModelSerializer):
-    profesional_service = ProfessionalServiceSerializer(many=True)
+    profesional_service = ProfessionalServiceSerializer()
 
     class Meta:
         model = RoomProfessionalService
