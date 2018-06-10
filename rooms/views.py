@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from rooms.models import Rooms
+from rooms.serializers import RoomSerializer
+
+
+class RoomViewSet(viewsets.ModelViewSet):
+    queryset = Rooms.objects.all()
+    serializer_class = RoomSerializer
+    permission_classes = ()
